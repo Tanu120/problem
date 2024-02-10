@@ -1,0 +1,13 @@
+def find_triplets(nums):
+    triplets = set()
+    nums.sort()
+    for i in range(len(nums) - 2):
+        for j in range(i + 1, len(nums) - 1):
+            for k in range(j + 1, len(nums)):
+                if nums[i] + nums[j] + nums[k] == 0:
+                    triplet = tuple(sorted([nums[i], nums[j], nums[k]]))
+                    triplets.add(triplet)
+    return list(triplets)
+nums = [4, 0, 3, 2,4, -4]
+result = find_triplets(nums)
+print("Unique triplets:", result)
