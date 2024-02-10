@@ -1,0 +1,15 @@
+def remove_middle_element(lst):
+    stack = []
+    middle_index = len(lst) // 2
+    for i in range(middle_index):
+        stack.append(lst.pop(0))
+    lst.pop(0)
+    while stack:
+        lst.insert(0, stack.pop())
+
+
+a = [1, 2, 3, 4, 5]
+b = [1,2,3,4,5,6]
+remove_middle_element(a)
+remove_middle_element(b)
+print(a , b)  
